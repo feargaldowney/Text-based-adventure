@@ -21,27 +21,34 @@ def faketype(words):
   time.sleep(1)
 
 def options(x, y):
-    faketype("Do you A) " + x + " or B " + y)
+    print("")
+    faketype("Do you A) " + x + " or B) " + y + "?")
+
+def next_room(z, pretext, object1, object2):
+    if "A" in z:
+        faketype("You entered the next room, in front of you "+ pretext + object1 + " and a " + object2)
+        faketype("You can only choose one to equip do you equip the " + object1 + " Or the " + object2) 
+        options(object1, object2)
 
 faketype("Adventures Of Aaliyaah\n")
 faketype("\n \n \n \n")
-faketype("You are in the woods with your friends\nYou have been walking in front for a while\nwhen you realise no-one has spoken in a long time...")
+faketype("You are alone in a dark room.\nOn your left is a wooden door.\nOn your right is a metal door.")
 print("\n")
-faketype("You turn around and your heart sinks...\nYou're friends are nowhere to be seen, the sun is beginning to fall and panic is about to set in...")
+faketype("")
 def start():
     print("\n")
     # faketype("Do you A) Scream or B) Breathe and attempt to retrace your steps")
-    options("Scream", "Breathe and attempt to retrace your steps")
+    options("choose the wooden door", "chooose the metal door")
     print("\n")
     answer = input(">").upper()
 
-    if 'A' in answer:
-        faketype("You woke a sleeping bear...\nYou die")
+    next_room(answer, "lies a ", "sword", "shield")
+    # if 'A' in answer: # Create a 'next_room function here
+    #     faketype("You walked into the next room, in which a sign reads: 'you may equip one of the following: A) a sword or b) dual daggers ")
+    #     faketype("")
+            
 
-    elif "B" in answer:
-        faketype("Good job! You stayed cam and you found some footprints.")
+    # elif "B" in answer: # and here
+    #     faketype("Good job! You stayed calm and you found some footprints.")
 
 start()
-
-
-
